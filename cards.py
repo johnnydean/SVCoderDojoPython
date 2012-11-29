@@ -1,3 +1,5 @@
+import random
+
 ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
 suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
 
@@ -25,7 +27,18 @@ for rank in range(1,14):
         deck.append(Card(rank,suit))
 
 print "The deck has", len(deck), "cards in it."
-
-
 for card in deck:
     print card.shortName,card.longName,"Value:",card.value
+
+hand = []
+
+for i in range(5):
+    pickedcard = random.choice(deck)
+    print "I picked the", pickedcard.longName
+    hand.append(pickedcard)
+    deck.remove(pickedcard)
+
+for i in hand:
+    print "The", i.longName, "is in the hand."
+
+print "The deck has", len(deck), "cards in it."
