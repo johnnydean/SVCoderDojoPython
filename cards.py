@@ -8,23 +8,9 @@ class Card:
         self.rank = ranks[rankID-1]
         self.suit = suits[suitID-1]
 
-
-
-myCard = Card(13,3)
-
-print myCard.rank
-print myCard.suit
-
-print "Now we're making another card"
-
-myOtherCard = Card(2,3)
-
-print myOtherCard.rank
-print myOtherCard.suit
-
-print "Now we're making a deck"
-
 deck = []
 for rank in range(1,14):
     for suit in range(1,5):
         deck.append(Card(rank,suit))
+
+print "The deck has", len(deck), "cards in it."
